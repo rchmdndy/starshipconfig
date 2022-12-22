@@ -73,8 +73,8 @@ charging_symbol = "🔌"
 discharging_symbol = "⚡"
 
 [[battery.display]]
-threshold = 100
-style = "dimmed white"
+threshold = 30
+style = "dimmed red"
 
 [hostname]
 ssh_only = false
