@@ -67,13 +67,14 @@ truncation_symbol = "…/"
 "Pictures" = " "
 
 [battery]
+style = "fg:#e3e5e5 bg:#403b7d"
 full_symbol = "🔋"
 charging_symbol = "🔌"
 discharging_symbol = "⚡"
 
 [[battery.display]]
-threshold = 30
-style = "bold red"
+threshold = 100
+style = "dimmed white"
 
 [hostname]
 ssh_only = false
