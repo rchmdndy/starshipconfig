@@ -28,7 +28,7 @@ function c{
 }
 
 function cpwd{
-    Set-Clipboard -Value $pwd
+    Set-Clipboard -Value "'${pwd}'"
 }
 function goto {
     param (
@@ -68,6 +68,9 @@ function goto {
         }
         "cpusim"{
             Set-Location -Path "C:\Program Files (x86)\CPU-OS Simulator"
+        }
+        "ssconf"{
+            Set-Location -Path "C:\Users\rachm\.config"
         }
         default {
             Write-Error "Invalid location"
