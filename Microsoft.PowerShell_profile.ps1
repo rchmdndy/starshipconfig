@@ -11,7 +11,7 @@ Import-Module PSReadLine
 Import-Module 7Zip4Powershell 
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
-Set-PSReadLineOption -BellStyle Visual
+Set-PSReadLineOption -BellStyle None
 
 function c{
     param(
@@ -20,6 +20,9 @@ function c{
     Switch ($places){
         "cpps"{
             Copy-Item 'C:\Users\rachm\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1' 'C:\Users\rachm\.config\'
+        }
+        default {
+            Write-Error "Invalid parameter"
         }
     }
 }
@@ -67,7 +70,7 @@ function goto {
             Set-Location -Path "C:\Program Files (x86)\CPU-OS Simulator"
         }
         default {
-            Write-Output "Invalid location"
+            Write-Error "Invalid location"
         }
     }
 }
