@@ -25,7 +25,7 @@ winget in the powershell prompt.
     
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/rchmdndy/starshipconfig/main/starship_theme/starship_prompt_preset1.png)
+![App Screenshot][(https://raw.githubusercontent.com/rchmdndy/starshipconfig/main/starship_theme/starship_prompt_preset1.png)]
 
 
 
