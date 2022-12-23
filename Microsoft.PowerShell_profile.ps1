@@ -3,12 +3,12 @@ New-Alias g goto
 New-Alias open ii 
 New-Alias np notepad
 New-Alias cl clear
-New-Alias uzp Expand-7Zip
-New-Alias czp Compress-7Zip
+#New-Alias uzp Expand-7Zip
+#New-Alias czp Compress-7Zip
 New-Alias rn Rename-Item
 New-Alias tm ntop
 Import-Module PSReadLine 
-Import-Module 7Zip4Powershell 
+#Import-Module 7Zip4Powershell 
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -BellStyle Visual
