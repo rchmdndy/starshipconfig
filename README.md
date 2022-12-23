@@ -10,6 +10,8 @@
 Untuk Instalasi lebih lengkap dapat dilihat pada website resmi 
 https://starship.rs/ , dan pada Windows 11 menggunakan Terminal 
 dari Microsoft Store, PowerShell versi 7+, serta download manager Chocolatey
+namun penggunaan winget bawaan masih memungkinkan, dengan memastikan bahwa
+App Manager terinstall, dapat dilihat pada Microsoft Store > App Manager
 
 
 
