@@ -16,7 +16,7 @@ dari Microsoft Store, PowerShell versi 7+, serta download manager Chocolatey
     
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/rchmdndy/starshipconfig/main/starship_prompt_preset1.png)
+![App Screenshot](https://raw.githubusercontent.com/rchmdndy/starshipconfig/main/starship_theme/starship_prompt_preset1.png)
 
 
 
