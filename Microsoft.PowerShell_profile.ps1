@@ -3,12 +3,12 @@ New-Alias g goto
 New-Alias open ii 
 New-Alias np notepad
 New-Alias cl clear
-#New-Alias uzp Expand-7Zip
-#New-Alias czp Compress-7Zip
+New-Alias uzp Expand-7Zip
+New-Alias czp Compress-7Zip
 New-Alias rn Rename-Item
 New-Alias tm ntop
 Import-Module PSReadLine 
-#Import-Module 7Zip4Powershell 
+Import-Module 7Zip4Powershell 
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -BellStyle Visual
@@ -21,9 +21,40 @@ function goto {
         $location
         )
         Switch ($location) {
-#            "example"{
-#                Set-Location -Path "C:\"
-#                | cl           
+            "m"{
+                Set-Location -Path "M:\"
+                | cl
+            }
+            "c"{
+                Set-Location -Path "C:\"
+            }
+            "e"{
+                Set-Location -Path "E:\"
+            }
+        "home"{
+            Set-Location -Path "C:\Users\rachm"
+        }
+        "start"{
+            Set-Location -Path "C:\Users\rachm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs"
+        }
+        "start2"{
+            Set-Location -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs"
+        }
+        "mk" {
+            Set-Location -Path "D:\college backup\matkul"
+        }
+        "lda"{
+            Set-Location -Path "D:\college backup\matkul\logika dan algoritma\Jobsheet"
+        }
+        "cding" {
+            Set-Location -Path "M:\code"
+        }
+        "dl" {
+            Set-Location -Path "C:\Users\rachm\Downloads"
+        }
+        "cpusim"{
+            Set-Location -Path "C:\Program Files (x86)\CPU-OS Simulator"
+        }
         default {
             Write-Output "Invalid location"
         }
@@ -48,8 +79,7 @@ function kn {
     }
 }
 
-#make sure to install starship first
-$ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
+$ENV:STARSHIP_CONFIG = "$HOME\.config\starship_theme\starship.toml"
 $ENV:STARSHIP_DISTRO = "<~ user "
 Invoke-Expression (&starship init powershell)
 
