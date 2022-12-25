@@ -20,7 +20,7 @@ function c{
     )
     Switch ($places){
         "cpps"{
-            Copy-Item 'C:\Users\rachm\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1' 'C:\Users\rachm\.config\'
+            Copy-Item 'C:\Users\rachm\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1' 'C:\Users\rachm\.config\powershell_script\'
         }
         default {
             Write-Error "Invalid parameter"
