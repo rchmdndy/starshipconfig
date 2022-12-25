@@ -4,6 +4,7 @@
 
 # Inserts a blank line between shell prompts
 add_newline = true
+scan_timeout = 10
 
 format = """
 [](#000000)\
@@ -42,10 +43,11 @@ $memory_usage\
 [ ](fg:#1d2230)\
 \n$character"""
 
-[env_var.STARSHIP_DISTRO]
-format = '[$env_value](bold white)'  # removed space between distro and rest for pwsh
-variable = "STARSHIP_DISTRO"
-disabled = false
+
+[c]
+symbol = " "
+style = "bg:#212376"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [character]
 success_symbol = "[](60)"
@@ -66,23 +68,30 @@ truncation_symbol = "…/"
 "Music" = " "
 "Pictures" = " "
 
+[docker_context]
+symbol = ""
+style = "bg:#212376"
+format = "via [ via $symbol via $context](bold blue)"
 
-[hostname]
-ssh_only = false
-format = "<[$hostname]($style)>"
-trim_at = "-"
-style = "bold dimmed white"
-disabled = true
+[elixir]
+symbol = " "
+style = "bg:#212376"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[elm]
+symbol = " "
+style = "bg:#212376"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[env_var.STARSHIP_DISTRO]
+format = '[$env_value](bold white)'  # removed space between distro and rest for pwsh
+variable = "STARSHIP_DISTRO"
+disabled = false
 
 [gcloud]
 disabled = false
 style = "fg:#e3e5e5 bg:#403b7d"
 format = '[[$symbol$account(@$domain)(\($region\))]($style)\]'
-
-[memory_usage]
-symbol = "memory "
-disabled = false
-format = '[[| RAM ~$ram ](fg:#a0a9cb bg:#1d2230)]($style)'
 
 [git_branch]
 symbol = ""
@@ -106,26 +115,22 @@ staged = '[($count) ](bg:#394260)'
 renamed = "襁 "
 deleted = " "
 
-[terraform]
-symbol = ""
-style = "bg:#212376"
-format = '[[ terraform $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+[golang]
+symbol = "ﳑ"
+style = "bg:#212736"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
-
-[c]
-symbol = " "
+[helm]
+symbol = ""
 style = "bg:#212376"
 format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
-[elixir]
-symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[elm]
-symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = true
 
 [java]
 symbol = " "
@@ -135,57 +140,6 @@ format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 [julia]
 symbol = " "
 style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[nim]
-symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[scala]
-symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[vagrant]
-symbol = ""
-style = "bg:#212376"
-format = "via [ via $symbol ($version)](fg:#769ff0 bg:#212736)]($style)"
-
-[docker_context]
-symbol = ""
-style = "bg:#212376"
-format = "via [ via $symbol via $context](bold blue)"
-
-[helm]
-symbol = ""
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[nodejs]
-symbol = ""
-style = "bg:#212736"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[rust]
-symbol = ""
-style = "bg:#212736"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[golang]
-symbol = "ﳑ"
-style = "bg:#212736"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[python]
-symbol = " "
-python_binary = "python3"
-style = "bg:#212736"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[php]
-symbol = ""
-style = "bg:#212736"
 format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [kubernetes]
@@ -198,8 +152,54 @@ disabled = false
 "clcreative-k8s-staging" = "cl-k8s-staging"
 "clcreative-k8s-production" = "cl-k8s-prod"
 
+[memory_usage]
+symbol = "memory "
+disabled = false
+format = '[[| RAM ~$ram ](fg:#a0a9cb bg:#1d2230)]($style)'
+
+[nim]
+symbol = " "
+style = "bg:#212376"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[python]
+symbol = " "
+python_binary = "python3"
+style = "bg:#212736"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[scala]
+symbol = " "
+style = "bg:#212376"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[terraform]
+symbol = ""
+style = "bg:#212376"
+format = '[[ terraform $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#1d2230"
 format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+
+[vagrant]
+symbol = ""
+style = "bg:#212376"
+format = "via [ via $symbol ($version)](fg:#769ff0 bg:#212736)]($style)"
