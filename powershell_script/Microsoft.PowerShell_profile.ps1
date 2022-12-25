@@ -7,6 +7,7 @@ New-Alias uzp Expand-7Zip
 New-Alias czp Compress-7Zip
 New-Alias rn Rename-Item
 New-Alias tm ntop
+New-Alias pyc pycharm
 Import-Module PSReadLine 
 Import-Module 7Zip4Powershell 
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
@@ -19,7 +20,7 @@ function c{
     )
     Switch ($places){
         "cpps"{
-            Copy-Item 'C:\Users\rachm\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1' 'C:\Users\rachm\.config\'
+            Copy-Item 'C:\Users\rachm\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1' 'C:\Users\rachm\.config\powershell_script\'
         }
         default {
             Write-Error "Invalid parameter"
