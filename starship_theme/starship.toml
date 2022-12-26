@@ -9,7 +9,7 @@ scan_timeout = 10
 format = """
 [](#000000)\
 [   ](bg:#000000 fg:#090c0c 135)\
-[](bg:#403b7d fg:#000000)\
+[](fg:#000000 bg:#403b7d)\
 $battery\
 $hostname\
 $directory\
@@ -43,7 +43,6 @@ $memory_usage\
 [ ](fg:#1d2230)\
 \n$character"""
 
-
 [c]
 symbol = " "
 style = "bg:#212376"
@@ -60,7 +59,7 @@ read_only = " ()"
 home_symbol = " ~"
 format = "[$read_only]($read_only_style)[ at $path ]($style)"
 truncation_length = 3
-truncation_symbol = "…/"
+truncation_symbol = "~/"
 
 [directory.substitutions]
 "Documents" = " "
@@ -99,6 +98,13 @@ style = "bg:#394260"
 truncation_length = 8
 truncation_symbol = "…/"
 format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+
+
+[git_metrics]
+added_style = 'bold green'
+deleted_style = "bold red"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
 
 [git_status]
 style = "bg:#394260"
@@ -155,7 +161,7 @@ disabled = false
 [memory_usage]
 symbol = "memory "
 disabled = false
-format = '[[| RAM ~$ram ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = '[[| RAM ~$ram_pct ](fg:#a0a9cb bg:#1d2230)]($style)'
 
 [nim]
 symbol = " "
