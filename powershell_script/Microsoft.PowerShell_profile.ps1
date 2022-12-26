@@ -14,6 +14,9 @@ Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -BellStyle None
 
+function notion{
+    Start-Process -Path "C:\Users\rachm\AppData\Local\Programs\Notion\Notion.exe"
+}
 function c{
     param(
         $places
