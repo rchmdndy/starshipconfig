@@ -17,6 +17,7 @@ $gcloud\
 [](fg:#403b7d bg:#394260)\
 $git_branch\
 $git_status\
+$git_metrics\
 [](fg:#394260 bg:#212736)\
 $nodejs\
 $rust\
