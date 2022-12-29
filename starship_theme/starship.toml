@@ -8,7 +8,7 @@ scan_timeout = 10
 
 format = """
 [](#000000)\
-[   ](bg:#000000 fg:#090c0c 135)\
+[   ](bg:#000000 fg:#090c0c 135)\
 [](fg:#000000 bg:#403b7d)\
 $battery\
 $hostname\
