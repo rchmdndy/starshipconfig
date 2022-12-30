@@ -62,7 +62,7 @@ function goto {
             Set-Location -Path "D:\college backup\matkul"
         }
         "lda"{
-            Set-Location -Path "D:\college backup\matkul\logika dan algoritma\Jobsheet"
+            Set-Location -Path "D:\college backup\matkul\logika_dan_algoritma\Jobsheet"
         }
         "cding" {
             Set-Location -Path "M:\code"

@@ -7,18 +7,18 @@ add_newline = true
 scan_timeout = 10
 
 format = """
-[](#000000)\
-[   ](bg:#000000 fg:#090c0c 135)\
-[](fg:#000000 bg:#403b7d)\
+[](#781D42)\
+[   ](bg:#781D42 fg:#5C3D2E 250)\
+[](fg:#781D42 bg:#5C3D2E)\
 $battery\
 $hostname\
 $directory\
 $gcloud\
-[](fg:#403b7d bg:#394260)\
+[](fg:#5C3D2E bg:#A3423C)\
 $git_branch\
 $git_status\
 $git_metrics\
-[](fg:#394260 bg:#212736)\
+[](fg:#A3423C bg:#AD8E70)\
 $nodejs\
 $rust\
 $golang\
@@ -38,28 +38,28 @@ $haskell\
 $golang\
 $elixir\
 $c\
-[](fg:#212736 bg:#1d2230)\
+[](fg:#AD8E70 bg:#630000)\
 $time\
 $memory_usage\
-[ ](fg:#1d2230)\
+[ ](fg:#630000)\
 \n$character"""
 
 [c]
 symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [character]
 success_symbol = "[](60)"
 error_symbol = "[](60)"
 
 [directory]
-style = "fg:#e3e5e5 bg:#403b7d"
-read_only_style = "fg:#e3e5e5 bg:#403b7d 197"
+style = "fg:#e3e5e5 bg:#5C3D2E"
+read_only_style = "fg:#e3e5e5 bg:#5C3D2E 197"
 read_only = " ()"
 home_symbol = " ~"
 format = "[$read_only]($read_only_style)[ at $path ]($style)"
-truncation_length = 3
+truncation_length = 2
 truncation_symbol = "~/"
 
 [directory.substitutions]
@@ -70,18 +70,18 @@ truncation_symbol = "~/"
 
 [docker_context]
 symbol = " "
-style = "bg:#212376"
+style = "bg:#AD8E70"
 format = "via [ via $symbol via $context](bold blue)"
 
 [elixir]
 symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [elm]
 symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [env_var.STARSHIP_DISTRO]
 format = '[$env_value](bold white)'  # removed space between distro and rest for pwsh
@@ -95,10 +95,10 @@ format = '[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_branch]
 symbol = " "
-style = "bg:#394260"
+style = "bg:#A3423C 255"
 truncation_length = 8
 truncation_symbol = "…/"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#A3423C 255)]($style)'
 
 
 [git_metrics]
@@ -108,8 +108,8 @@ format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 
 [git_status]
-style = "bg:#394260"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+style = "bg:#A3423C 255"
+format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#A3423C 255)]($style)'
 conflicted = "🏳"
 up_to_date = " "
 untracked = " "
@@ -118,19 +118,19 @@ diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
 stashed = " "
 modified = " "
-staged = '[($count) ](bg:#394260)'
+staged = '[($count) ](bg:#A3423C 255)'
 renamed = "襁 "
 deleted = " "
 
 [golang]
 symbol = "ﳑ" 
-style = "bg:#212736"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70 0"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [helm]
 symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [hostname]
 ssh_only = false
@@ -141,18 +141,18 @@ disabled = true
 
 [java]
 symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [julia]
 symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [kubernetes]
 symbol = " "
-style = "bg:#212736"
-format = 'on [ via $symbol $context\($namespace\)](fg:#769ff0 bg:#212736)]($style) '
+style = "bg:#AD8E70 0"
+format = 'on [ via $symbol $context\($namespace\)](fg:#769ff0 bg:#AD8E70 0)]($style) '
 disabled = false
 
 [kubernetes.context_aliases]
@@ -162,51 +162,51 @@ disabled = false
 [memory_usage]
 symbol = "memory "
 disabled = false
-format = '[[| RAM ~$ram_pct ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = '[[| RAM ~$ram_pct ](fg:#a0a9cb bg:#630000 255)]($style)'
 
 [nim]
 symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [nodejs]
 symbol = " "
-style = "bg:#212736"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70 0"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [php]
 symbol = " "
-style = "bg:#212736"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70 0"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [python]
 symbol = " "
 python_binary = "python3"
-style = "bg:#212736"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70 0"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [rust]
 symbol = " "
-style = "bg:#212736"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70 0"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [scala]
 symbol = " "
-style = "bg:#212376"
-format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70"
+format = '[[ via $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [terraform]
 symbol = " "
-style = "bg:#212376"
-format = '[[ terraform $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:#AD8E70"
+format = '[[ terraform $symbol ($version) ](fg:#769ff0 bg:#AD8E70 0)]($style)'
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+style = "bg:#630000 255"
+format = '[[  $time ](fg:#a0a9cb bg:#630000 255)]($style)'
 
 [vagrant]
 symbol = " "
-style = "bg:#212376"
-format = "via [ via $symbol ($version)](fg:#769ff0 bg:#212736)]($style)"
+style = "bg:#AD8E70"
+format = "via [ via $symbol ($version)](fg:#769ff0 bg:#AD8E70 0)]($style)"
