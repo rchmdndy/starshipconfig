@@ -17,6 +17,48 @@ Set-PSReadLineOption -BellStyle None
 function notion{
     Start-Process -Path "C:\Users\rachm\AppData\Local\Programs\Notion\Notion.exe"
 }
+
+function web {
+    param (
+        $website, $destination
+    )
+    if ($website -match 'yt')
+        {
+            switch($destination)
+            {
+                "pl1" { 
+                    Start-Process "https://www.youtube.com/watch?v=vBYC31o3dVI"
+                 }
+                "pl2" { 
+                    Start-Process "https://www.youtube.com/watch?v=DOjrQ9DByhA&t=1072s"
+                 }
+                "pl3" { 
+                    Start-Process "https://www.youtube.com/watch?v=DOjrQ9DByhA&t=1072s"
+                 }
+                Default {
+                    Start-Process "https://www.youtube.com"
+                }
+            }
+        }
+    elseif ($website -match 'gh') 
+        {
+            switch ($destination) {
+                'ssrepo' { 
+                    Start-Process "https://github.com/rchmdndy/starshipconfig"
+                 }
+                Default {
+                    Start-Process "https://www.github.com"
+                }
+            }    
+        }
+    else 
+        {
+            Write-Error ("Parameter invalid!")
+        }
+    }   
+
+
+
 function c{
     param(
         $places
