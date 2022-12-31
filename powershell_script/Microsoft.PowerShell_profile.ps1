@@ -6,23 +6,50 @@ New-Alias cl clear
 New-Alias uzp Expand-7Zip
 New-Alias czp Compress-7Zip
 New-Alias rn Rename-Item
-New-Alias tm ntop
 New-Alias pyc pycharm
+New-Alias w web
 Import-Module PSReadLine 
 Import-Module 7Zip4Powershell 
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -BellStyle None
 
-function notion{
-    Start-Process -Path "C:\Users\rachm\AppData\Local\Programs\Notion\Notion.exe"
+function x{
+    param($app)
+    Switch($app)
+    {
+        "notion"{
+            Start-Process -Path "C:\Users\rachm\AppData\Local\Programs\Notion\Notion.exe"
+        }
+        "obs"{
+            Start-Process -Path "C:\Program Files\obs-studio\bin\64bit\obs64.exe"
+        }
+        "easymp"{
+            Start-Process -Path "C:\Program Files (x86)\EPSON Projector\EasyMP Network Projection V2\EMP_NSC.exe"
+        }
+        "dc"{
+            Start-Process -Path "C:\Users\rachm\AppData\Local\Discord\Update.exe"
+        }
+        "canva"{
+            Start-Process -Path "C:\Users\rachm\AppData\Local\Programs\Canva\Canva.exe"
+        }
+        "word"{
+            Start-Process -Path "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE"
+        }
+        "osu"{
+            Start-Process -Path "C:\Users\rachm\AppData\Local\osu!\osu!.exe"
+        }
+        Default{
+            Write-Error "Application not registered / parameter invalid"
+        }
+    }
 }
 
 function web {
     param (
         $website, $destination
     )
-    if ($website -match 'yt')
+    if ($website -ceq 'yt')
         {
             switch($destination)
             {
@@ -40,30 +67,44 @@ function web {
                 }
             }
         }
-    elseif ($website -match 'gh') 
+    elseif ($website -ceq 'gh') 
         {
             switch ($destination) {
                 'ssrepo' { 
-                    Start-Process "https://github.com/rchmdndy/starshipconfig"
+                    Start-Process "htt
+                    ps://github.com/rchmdndy/starshipconfig"
                  }
                 Default {
                     Start-Process "https://www.github.com"
                 }
             }    
         }
+
+    elseif ($website -ceq 'wa')
+        {
+            Start-Process "https://web.whatsapp.com/"
+        }   
+
+    elseif ($website -ceq 'elnino')
+        {
+            Start-Process "https://elnino20212.polines.ac.id/course/search.php?search=TI1A"
+        }   
+    elseif ($website -ceq '.') 
+        {
+            Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+        }
     else 
         {
-            Write-Error ("Parameter invalid!")
+            Write-Error 'Parameter invalid!'
         }
     }   
 
 
 
 function c{
-    param(
-        $places
-    )
-    Switch ($places){
+    param($place)
+    Switch ($place)
+    {
         "cpps"{
             Copy-Item 'C:\Users\rachm\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1' 'C:\Users\rachm\.config\powershell_script\'
         }
@@ -77,20 +118,19 @@ function cpwd{
     Set-Clipboard -Value "'${pwd}'"
 }
 function goto {
-    param (
-        $location
-        )
-        Switch ($location) {
-            "m"{
+    param ($location)
+    Switch ($location) 
+    {
+        "m"{
                 Set-Location -Path "M:\"
                 | cl
-            }
-            "c"{
+        }
+        "c"{
                 Set-Location -Path "C:\"
-            }
-            "e"{
+        }
+        "e"{
                 Set-Location -Path "E:\"
-            }
+        }
         "home"{
             Set-Location -Path "C:\Users\rachm"
         }
@@ -116,7 +156,7 @@ function goto {
             Set-Location -Path "C:\Program Files (x86)\CPU-OS Simulator"
         }
         "ssconf"{
-            Write-Host "Don't forget to pull first!" -ForegroundColor White -BackgroundColor DarkRed
+            Write-Host "‼️Don't forget to pull first‼️" -ForegroundColor White -BackgroundColor DarkRed
             Set-Location -Path "C:\Users\rachm\.config"
         }
         default {
