@@ -19,25 +19,25 @@ function x{
     Switch($app)
     {
         "notion"{
-            Start-Process -Path "C:\Users\rachm\AppData\Local\Programs\Notion\Notion.exe"
+            Start-Process -Path "C:\Users\rachm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Notion.lnk"
         }
         "obs"{
-            Start-Process -Path "C:\Program Files\obs-studio\bin\64bit\obs64.exe"
+            Start-Process -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OBS Studio\OBS Studio (64bit).lnk"
         }
         "easymp"{
-            Start-Process -Path "C:\Program Files (x86)\EPSON Projector\EasyMP Network Projection V2\EMP_NSC.exe"
+            Start-Process -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\EPSON Projector\EasyMP Network Projection\EasyMP Network Projection Ver.2.86.lnk"
         }
         "dc"{
-            Start-Process -Path "C:\Users\rachm\AppData\Local\Discord\Update.exe"
+            Start-Process -Path "C:\Users\rachm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
         }
         "canva"{
-            Start-Process -Path "C:\Users\rachm\AppData\Local\Programs\Canva\Canva.exe"
+            Start-Process -Path "C:\Users\rachm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Canva.lnk"
         }
         "word"{
-            Start-Process -Path "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE"
+            Start-Process -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Word.lnk"
         }
         "osu"{
-            Start-Process -Path "C:\Users\rachm\AppData\Local\osu!\osu!.exe"
+            Start-Process -Path "C:\Users\rachm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\osu!.lnk"
         }
         Default{
             Write-Error "Application not registered / parameter invalid"
