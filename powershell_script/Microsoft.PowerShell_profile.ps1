@@ -71,8 +71,7 @@ function web {
         {
             switch ($destination) {
                 'ssrepo' { 
-                    Start-Process "htt
-                    ps://github.com/rchmdndy/starshipconfig"
+                    Start-Process "https://github.com/rchmdndy/starshipconfig"
                  }
                 Default {
                     Start-Process "https://www.github.com"
