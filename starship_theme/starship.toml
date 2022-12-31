@@ -7,7 +7,7 @@ add_newline = true
 scan_timeout = 10
 
 format = """
-[](#781D42)\
+[▒▓](#781D42)\
 [   ](bg:#781D42 fg:#5C3D2E 250)\
 [](fg:#781D42 bg:#5C3D2E)\
 $battery\
