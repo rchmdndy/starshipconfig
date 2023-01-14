@@ -8,6 +8,8 @@ New-Alias czp Compress-7Zip
 New-Alias rn Rename-Item
 New-Alias pyc pycharm
 New-Alias w web
+New-Alias restart Restart-Computer
+New-Alias shdown Stop-Computer
 Import-Module PSReadLine 
 Import-Module 7Zip4Powershell 
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
